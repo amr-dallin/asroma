@@ -1,0 +1,7 @@
+{
+	"name": "asroma",
+	"require": {
+		"composer-plugin-api": "*",
+		"sunra/php-simple-html-dom-parser": "1.5.2"
+	}
+}
