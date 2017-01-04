@@ -1,7 +1,9 @@
 
-var xhr = new XMLHttpRequest();
-xhr.open('GET', '//localhost/asroma/data.json', false);
+var XHR = ("onload" in new XMLHttpRequest()) ? XMLHttpRequest : XDomainRequest;
+var xhr = new XHR();
+xhr.open('GET', 'http://api.dallin.pro/asroma/data.json', false);
 xhr.send();
+
 if (xhr.status == 200) {
     var answers = xhr.responseText;
     var json = JSON.parse(answers);
