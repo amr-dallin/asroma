@@ -1,0 +1,749 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="robots" content="index, follow" />
+<meta name="keywords" content="Рома, AS Roma, Totti, Тотти, Де Росси, Боян, Ламела, Lamela, De Rossi, Bojan1" />
+<meta name="description" content="AS Roma: Сайт о &quot;Роме&quot;, фан-клуб болельщиков &quot;Ромы&quot;" />
+<link href="http://www.as-roma.ru/bitrix/components/yill/table_season/templates/.default/style.css?1463900336354" type="text/css"  rel="stylesheet" />
+<link href="http://www.as-roma.ru/bitrix/templates/.default/components/bitrix/news.list/index_news_detail/style.css?1312262681108" type="text/css"  rel="stylesheet" />
+<link href="http://www.as-roma.ru/bitrix/templates/.default/components/bitrix/news.list/index_news_new/style.css?1310567150108" type="text/css"  rel="stylesheet" />
+<link href="http://www.as-roma.ru/bitrix/templates/asroma_new/components/bitrix/news.list/img_header/style.css?135360393981" type="text/css"  data-template-style="true"  rel="stylesheet" />
+<link href="http://www.as-roma.ru/bitrix/templates/.default/components/bitrix/news.list/articles_new/style.css?1310569411108" type="text/css"  data-template-style="true"  rel="stylesheet" />
+<link href="http://www.as-roma.ru/bitrix/templates/asroma_new/components/bitrix/menu/menu_bottom/style.css?13536006924096" type="text/css"  data-template-style="true"  rel="stylesheet" />
+<link href="http://www.as-roma.ru/bitrix/templates/asroma_new/template_styles.css?13993029041158" type="text/css"  data-template-style="true"  rel="stylesheet" />
+<script type="text/javascript" src="http://www.as-roma.ru/bitrix/templates/asroma_new/components/bitrix/menu/menu_bottom/script.js?1353600692469"></script>
+<script type="text/javascript">var _ba = _ba || []; _ba.push(["aid", "24e9807aebb1bae606fedc5f47d1f86b"]); _ba.push(["host", "www.as-roma.ru"]); (function() {var ba = document.createElement("script"); ba.type = "text/javascript"; ba.async = true;ba.src = (document.location.protocol == "https:" ? "https://" : "http://") + "bitrix.info/ba.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(ba, s);})();</script>
+
+
+<title>
+Все об As Roma на русском</title>
+<link rel="stylesheet" href="http://www.as-roma.ru/css_new/style.css" type="text/css">
+<link rel="shortcut icon" href="http://www.as-roma.ru/favicon.ico">
+		<link rel="stylesheet" type="text/css" href="http://www.as-roma.ru/css/jquery.fancybox.css" media="screen">
+                <script>
+                        var okmRUMkey = "34bfcfc1-34ae-4797-bb4b-fe15f5e6cb57";
+                        (function() {
+                            var s = document.getElementsByTagName("script")[0],
+                                 p = document.createElement("script");
+                            p.async = "async";
+                            p.src = "//rum.okmeter.ru/static/js/rum.js";
+                            s.parentNode.insertBefore(p, s);
+                        })();
+                </script>
+		<script type="text/javascript" src="http://www.as-roma.ru/js/jquery-1.4.2.min.js"></script>
+		<script type="text/javascript" src="http://www.as-roma.ru/js/jquery.easing.1.3.js"></script>
+		<script type="text/javascript" src="http://www.as-roma.ru/js/jquery.fancybox-1.3.1.pack.js"></script>
+			<script type="text/javascript" src="http://www.as-roma.ru/js/jquery.form.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$("a.gallery").fancybox();
+				$("a#inline").fancybox(
+				{
+							'scrolling'		: 'no',
+							'titleShow'		: false,
+							'autoDimensions'	: true,
+				});
+					$("a#inline_two").fancybox(
+				{
+							'scrolling'		: 'no',
+							'titleShow'		: false,
+							'autoDimensions'	: true,
+				});
+				$("a#inp").click(function () {
+				  $("div#go").slideToggle("slow");
+				  $('html, body').animate({ scrollTop: $("#go").offset().top }, 500);
+				  return false;
+				});
+			});
+			function look(type){
+				param=document.getElementById(type);
+				if(param.style.display == "none") param.style.display = "block";
+				else param.style.display = "none"
+			}
+			function ajax_reg(){
+				mail_user=$("input[name=mail_user]").val();	
+				name_user=$("input[name=name_user]").val();	
+				captcha_word=$("input[name=captcha_word]").val();	
+				captcha_sid=$("input[name=captcha_sid]").val();
+				ok=1;
+				if(ok){
+					$.ajax({
+						  url: "/ajax_reg.php",
+						  global: false,
+						  type: "POST",
+						  data: ({mail_user:mail_user,name_user:name_user,captcha_word:captcha_word,captcha_sid:captcha_sid,go_reg:"true"}),
+						  dataType: "text",
+						  success: function(html){
+							var result =  new Object();
+							result = html.split('|||');		
+							if(result[0]=="RES"){
+								$('#reg_form_text').html('<span style="color: green;"><p>Вы успешно зарегистрированы и авторизованы на нашем сайте! Ваши имя пользователя и пароль были отправлены на указанный e-mail.</p><p>Пожалуйста, <a href="http://www.as-roma.ru/?auth_on=Y">авторизуйтесь</a>, указав Ваши логин и пароль.</p>');
+							}else{
+								$('#err').html('<li style="color: red;">'+result[1]+'</li>');
+							}
+							
+						  }
+					   }
+					);
+				}
+			}
+			function ajax_auth(){
+				login=$("input[name=login]").val();	
+				password=$("input[name=password]").val();					
+				ok=1;
+				if(ok){
+					$.ajax({
+						  url: "/ajax_auth.php",
+						  global: false,
+						  type: "POST",
+						  data: ({login:login,password:password}),
+						  dataType: "text",
+						  success: function(html){
+							var result =  new Object();
+							result = html.split('|||');		
+							if(result[0]=="RES"){
+								document.location.href="/";
+							}else{
+								$('#err_auth').html('<li style="color: red;">'+result[1]+'</li>');
+							}
+							
+						  }
+					   }
+					);
+				}
+			}
+		</script> 
+<script type="text/javascript">
+
+$(function(){
+	$('.dropdown').mouseenter(function(){
+		$('.sublinks').stop(false, true).hide();
+	
+		var submenu = $(this).parent().next();
+
+		submenu.css({
+			position:'absolute',
+			top: '27px',
+			left: '0px',
+			zIndex:1000
+		});
+		
+		submenu.stop().slideDown(300);
+		
+		submenu.mouseleave(function(){
+			$(this).slideUp(300);
+		});
+	});
+});
+</script>
+
+
+</head>
+<body onload="ODKL.init();">
+<style>
+																		#reg {
+																			font-weight:bold;
+																			border:solid 1px #d97024;
+																			font-size:14px;
+																			font-family: Arial;
+																			color: #d97024;
+																			line-height:14px;
+																			width:170px;
+																			 background-color:#f8f6e6;
+																		}
+																		#reg2 {
+																			font-weight:bold;
+																			border:solid 1px #d97024;
+																			font-size:14px;
+																			font-family: Arial;
+																			color: #d97024;
+																			line-height:14px;
+																			width:130px;
+																			 background-color:#f8f6e6;
+																		}
+																		#go{
+																			display: none;
+																		}
+																	</style>
+ <div id="wrapper">
+	<div id="wrapper_two">
+	
+	
+	<div class="img_header">
+
+		
+<img class="preview_picture" border="0" src="http://www.as-roma.ru/upload/iblock/6cc/cs1.jpg" width="1280" height="511"  />
+			
+		
+</div>
+ 
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		<div id="wrapper_three">
+  <div class="cont_block_two"> 
+    <div class="cont_top_two"> 
+		<a href="index.html" id="logo"></a>
+	
+      <div class="top_menu"> 
+        <div class="tm_menu"> 
+          <div style="float: left; width: 400px;"> 	
+            <ul class="tm"> 		
+              <li class="tmu"><a href="http://www.as-roma.ru/news.php" class="dropdown" >Новости</a></li>
+             		 		 	</ul>
+           	
+            <ul class="tm"> 		
+              <li class="tmu"><a href="http://www.as-roma.ru/team.php" class="dropdown" >Сезон</a></li>
+             		 		
+              <li class="sublinks"> 			<a href="http://www.as-roma.ru/team.php" >Состав</a> 			<a href="http://www.as-roma.ru/matches.php?compet=1" >Серия А</a> 			<a href="http://www.as-roma.ru/matches.php?compet=2" >Кубок Италии</a> 			<a href="http://www.as-roma.ru/matches.php?compet=4" >Лига Чемпионов</a> 			<a href="http://www.as-roma.ru/showtext.php?mode=prim" >Примавера</a> <a href="http://www.as-roma.ru/transfers.php" >Трансферы</a> <a href="http://www.as-roma.ru/stat.php" >Статистика</a> <a href="http://www.as-roma.ru/finance.php" >Финансы</a>		</li>
+             		 	</ul>
+           
+            <ul class="tm"> 		
+              <li class="tmu"><a href="http://www.as-roma.ru/matches.php" class="dropdown" >Чемпионат</a></li>
+             		 		 	</ul>
+           	
+            <ul class="tm"> 		
+              <li class="tmu"><a href="http://www.as-roma.ru/mmedia.php?mode=3" class="dropdown" >Медиа</a></li>
+             		 		
+              <li class="sublinks"> 			<a href="http://www.as-roma.ru/mmedia.php?mode=3" >Фотоархив</a> 			<a href="http://www.as-roma.ru/mmedia.php?mode=1" >Видео</a> 			<a href="http://www.as-roma.ru/mmedia.php?mode=2" >Аудио</a> 			<a href="http://www.as-roma.ru/mmedia.php?mode=4" >Обои</a> 			<a href="http://www.as-roma.ru/games.php" >Игры</a> 		</li>
+             		 	</ul>
+           </div>
+         
+          <div style="float: right; width: 370px;"> 	 
+            <ul class="tm"> 		
+              <li class="tmu"><a href="http://www.as-roma.ru/articles.php" class="dropdown" >Статьи</a></li>
+             		 		 	</ul>
+           	
+            <ul class="tm"> 		
+              <li class="tmu"><a href="http://www.as-roma.ru/about_team.php?mode=history" class="dropdown" >О команде</a></li>
+             		 		
+              <li class="sublinks"> 			<a href="http://www.as-roma.ru/about_team.php?mode=history" >История</a> 			<a href="http://www.as-roma.ru/about_team.php?mode=legend" >Легенды</a> 			<a href="http://www.as-roma.ru/about_team.php?mode=trofei" >Трофеи</a> 			<a href="http://www.as-roma.ru/about_team.php?mode=hymn" >Гимн</a> 			<a href="http://www.as-roma.ru/about_team.php?mode=stadio" >Стадион</a> 		</li>
+             		 	</ul>
+           
+            <ul class="tm"> 		
+              <li class="tmu"><a href="http://www.as-roma.ru/about.php" class="dropdown" >О проекте</a></li>
+             		 		 	</ul>
+           	
+            <ul class="tm"> 		
+              <li class="tmu"><a href="http://forum.as-roma.ru/" class="dropdown" >Общение</a></li>
+             		 		
+              <li class="sublinks"> 			<a href="http://forzaroma.borda.ru/" >Гостевая</a> 			<a href="http://www.as-roma.ru/comm.php?mode=row" >Комментарии</a> 		</li>
+             		 	</ul>
+           </div>
+         
+          <div style="clear: both;"></div>
+         </div>
+       </div>
+     	 
+      <div class="match"> 	 
+<div class="match_left">
+<a href="http://www.as-roma.ru/matches.php?id=271012" class="match_last">ПОСЛЕДНИЙ МАТЧ <span>22.12.2016 22:45:00</span></a>
+<div class="match_name1"><img src="http://www.as-roma.ru/upload/iblock/16a/asroma.gif" width="40" height="40"/>Рома</div>
+<div class="match_name2"><img src="http://www.as-roma.ru/upload/iblock/c47/chievo1.gif" width="40" height="40">Кьево</div>
+<div class="match_point">3 : 1</div>
+
+
+
+
+</div>
+ 
+
+
+<div class="match_right">
+<a href="http://www.as-roma.ru/matches.php?id=271315" class="match_last">СЛЕДУЮЩИЙ МАТЧ <span>08.01.2017 17:00:00</span></a>
+<div class="match_name1"><img src="http://www.as-roma.ru/upload/iblock/e51/genoa2.png" width="40" height="40"/>Дженоа</div>
+<div class="match_name2"><img src="http://www.as-roma.ru/upload/iblock/16a/asroma.gif" width="40" height="40">Рома</div>
+<div class="match_point"><img src="http://www.as-roma.ru/images_new/vs.png"/></div>
+
+
+
+
+</div>
+<div style="clear:both"></div> 
+<style>
+.lk {
+font:12px Arial;
+color:#5f5c5e;
+text-align:left;
+}
+.lk a{
+font:12px Arial;
+color:#fc8019;
+}
+</style>
+ 
+        <div class="lk">    <a class="main"  href="http://www.as-roma.ru/reg_all.php" >Регистрация</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="http://www.as-roma.ru/auth.php" >Войти</a>  				  </div>
+       	 </div>
+     	 <div class="content_block_top"></div>
+      <div class="content_block_two"> 
+
+
+
+
+<script src="//api.dallin.pro/asroma/table.js" async></script>
+<div id="asromaTable"></div>
+<!--<div class="rate">
+	<div class="ser_name">СЕРИЯ А</div>
+	<table class="tabl_ser">
+	    <tr class="tabl_ch">
+		    <td class="team_name"></td>
+		    <td>Игр</td><td>Очков</td>
+	    </tr>
+		<tr>
+		    <td class="team_name">Juventus</td>
+			<td>12</td>
+			<td>30</td>
+		</tr>
+	</table>
+</div>-->
+
+
+
+
+
+
+
+
+<div style="overflow:hidden">
+
+
+
+<style>
+.news_new_det {
+font:13px Arial;
+color:#27060b;
+margin-bottom:20px;
+
+}
+
+.news_det_name {
+font:20px Arial;
+color:#450d16;
+margin-bottom:10px;
+}
+.news_det_name a{
+font:20px Arial;
+color:#450d16;
+
+}
+
+
+</style>
+
+		<div class="news_new_det" id="bx_651765591_271600">
+	<div class="news_det_name"><a href="http://www.as-roma.ru/news.php?id=271600">Флоренци совмещает приятный отдых с тренировками</a></div>
+	25-летний универсал «Ромы» проводит зимний отпуск на Мальдивах с максимальной пользой для здоровья	
+	</div>
+	
+	
+
+
+<style>
+.news_new {
+font:13px Arial;
+color:#636363;
+border-bottom:1px dashed #6d6d6d;
+padding:5px 10px;
+}
+.news_new_act {
+font:13px Arial;
+color:#db7d7d;
+border-bottom:1px dashed #6d6d6d;
+padding:5px 10px;
+background:#6a001c;
+}
+.news_new_act a{
+color:#fff;
+}
+.news_new:hover {
+background:#6a001c;
+color:#db7d7d;
+
+}
+
+.news_new:hover a{
+
+color:#fff;
+
+}
+.news_new a{
+font:14px Arial;
+color:#27060b;
+text-decoration:none;
+
+}
+.news_url {
+margin-top:10px;
+text-align:right;
+}
+.news_url a {
+font:11px Arial;
+color:#c03413;
+
+
+
+}
+</style>
+	
+		<div class="news_new" id="bx_1373509569_271591">
+	29.12.2016 &nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.as-roma.ru/news.php?id=271591">&quot;Рома&quot; рассматривает две альтернативы Мончи</a>
+	
+	</div>
+	
+
+		<div class="news_new" id="bx_1373509569_271590">
+	29.12.2016 &nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.as-roma.ru/news.php?id=271590">Итурбе обойдется &quot;Торино&quot; в 10 миллионов евро</a>
+	
+	</div>
+	
+
+		<div class="news_new" id="bx_1373509569_271588">
+	29.12.2016 &nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.as-roma.ru/news.php?id=271588">Де Росси получит новый контракт</a>
+	
+	</div>
+	
+
+		<div class="news_new" id="bx_1373509569_271587">
+	29.12.2016 &nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.as-roma.ru/news.php?id=271587">Тотти – самый эффективный бомбардир 2016 года</a>
+	
+	</div>
+	
+
+		<div class="news_new" id="bx_1373509569_271580">
+	29.12.2016 &nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.as-roma.ru/news.php?id=271580">Паллотта намерен разобраться с барьерами на &quot;Олимпико&quot;</a>
+	
+	</div>
+	
+
+		<div class="news_new" id="bx_1373509569_271578">
+	29.12.2016 &nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.as-roma.ru/news.php?id=271578">&quot;Рома&quot; вернет Пеллегрини и откажется от Дефреля</a>
+	
+	</div>
+	
+
+		<div class="news_new" id="bx_1373509569_271577">
+	29.12.2016 &nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.as-roma.ru/news.php?id=271577">Рекорды 2016 года: Джеко и Салах – сразу в двух рейтингах</a>
+	
+	</div>
+	
+
+		<div class="news_new" id="bx_1373509569_271575">
+	29.12.2016 &nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.as-roma.ru/news.php?id=271575">Паллотта – об увольнении Гарсии, возвращении Спаллетти и судьбе Тотти</a>
+	
+	</div>
+	
+
+		<div class="news_new" id="bx_1373509569_271571">
+	29.12.2016 &nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.as-roma.ru/news.php?id=271571">Торрейра готов покинуть &quot;Сампдорию&quot;</a>
+	
+	</div>
+	
+
+		<div class="news_new" id="bx_1373509569_271542">
+	28.12.2016 &nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.as-roma.ru/news.php?id=271542">Вокруг &quot;Ромы&quot;: трансферный дайджест</a>
+	
+	</div>
+	
+
+<div class="news_url"><a href="http://www.as-roma.ru/news-archive.php">Архив новостей</a></div></div>
+<div style="clear:both"></div> 
+	    <div style="clear: both;"></div>
+        <div style="height: 30px;"></div>
+       
+        <div class="tab_left_1"> 
+<!--sports.ru-->
+ <link href="http://www.sports.ru/css/informer.css" media="screen,projection" type="text/css" rel="stylesheet"></link> 
+<style>
+#sports_1243100451 { BACKGROUND-COLOR: #f8f6e6;}
+</style>
+ <noindex> 
+            <div class="sportsru" id="sports_1243100451">Загрузка...</div>
+           
+<script language="JavaScript" src="http://www.sports.ru/informer/code.js.html?section=235&title=%EE%CF%D7%CF%D3%D4%C9%20%C9%D4%C1%CC%D8%D1%CE%D3%CB%CF%C7%CF%20%C6%D5%D4%C2%CF%CC%C1%20%CF%D4%20%53%70%6F%72%74%73%2E%72%75&limit=10&hide_links=1&cls=news&div=1243100451"></script>
+ </noindex> 
+<!--/sports.ru-->
+ </div>
+       
+        <div class="tab_right_1"> 
+	
+		<style>
+.art_name {
+}
+.art_name {
+width:483px;
+height:30px;
+position:relative;
+background:url(http://www.as-roma.ru/images_new/art_name.png) no-repeat;
+font:14px Arial;
+color:#450d16;
+text-transform:uppercase;
+margin-bottom:10px;
+}
+a.art_all {
+position:absolute;
+right:45px;
+top:8px;
+font:11px Arial;
+color:#c03413;
+text-transform:none;
+}
+.art_new {
+margin-bottom:20px;
+}
+a.art_n {
+display:block;
+font:14px Arial;
+color:#c03413;
+}
+.art_new p{
+font:13px Arial;
+color:#27060b;
+margin:0;
+padding:0;
+
+}
+</style>
+
+
+<div style="margin:0px 0px; width:483px;">
+<div class="art_name">
+Последние статьи
+<a href="http://www.as-roma.ru/articles-archive.php" class="art_all">Архив статей</a>
+</div>
+	<div class="art_new" id="bx_651765591_271679">
+<a href="http://www.as-roma.ru/articles.php?id=271679" class="art_n">Видео: Антонио Рюдигер</a>
+<p></p>
+
+</div>
+	<div class="art_new" id="bx_651765591_271678">
+<a href="http://www.as-roma.ru/articles.php?id=271678" class="art_n">Фото: Алисон</a>
+<p><img width="150" src="http://i.imgur.com/UjdqTQm.jpg" height="200"></p>
+
+</div>
+	<div class="art_new" id="bx_651765591_271676">
+<a href="http://www.as-roma.ru/articles.php?id=271676" class="art_n">Видео от Ermes79: возвращение Ф.Борини?</a>
+<p></p>
+
+</div>
+	<div class="art_new" id="bx_651765591_271675">
+<a href="http://www.as-roma.ru/articles.php?id=271675" class="art_n">Топ-11 Серии А в 2016 году</a>
+<p><img width="150" src="http://i.imgur.com/Mhcqrey.jpg" height="120"></p>
+
+</div>
+	<div class="art_new" id="bx_651765591_271674">
+<a href="http://www.as-roma.ru/articles.php?id=271674" class="art_n">Видео от Ermes79: голы &quot;Ромы&quot; в 2016 году</a>
+<p><img width="150" src="http://i.imgur.com/SADzOnV.jpg" height="150"></p>
+
+</div>
+
+</div> </div>
+       
+        <div style="clear: both;"></div>
+       	 </div>
+     </div>
+   </div>
+ 
+  <div class="footer_two">
+	<div id="menu_bottom">
+     
+<ul id="horizontal-multilevel-menu">
+
+
+	
+	
+		
+											<li><a href="http://www.as-roma.ru/news.php" class="root-item">Новости</a></li>
+			
+		
+	
+	
+	
+	
+		
+							<li class="li_line"></li>				<li><a href="http://www.as-roma.ru/team.php" class="root-item">Сезон</a></li>
+			
+		
+	
+	
+	
+	
+		
+							<li class="li_line"></li>				<li><a href="http://www.as-roma.ru/matches.php" class="root-item">Чемпионат</a></li>
+			
+		
+	
+	
+	
+	
+		
+							<li class="li_line"></li>				<li><a href="http://www.as-roma.ru/about_team.php" class="root-item">О команде</a></li>
+			
+		
+	
+	
+	
+	
+		
+							<li class="li_line"></li>				<li><a href="http://www.as-roma.ru/articles.php" class="root-item">Статьи</a></li>
+			
+		
+	
+	
+	
+	
+		
+							<li class="li_line"></li>				<li><a href="http://www.as-roma.ru/mmedia.php" class="root-item">Медиа</a></li>
+			
+		
+	
+	
+	
+	
+		
+							<li class="li_line"></li>				<li><a href="http://www.as-roma.ru/about.php" class="root-item">О проекте</a></li>
+			
+		
+	
+	
+	
+	
+		
+							<li class="li_line"></li>				<li><a href="http://www.as-roma.ru/comm.php" class="root-item">Комментарии</a></li>
+			
+		
+	
+	
+
+</ul>
+<div class="menu-clear-left"></div>
+
+	<div id="copy">&copy 2014 Roma Club Russia — официальный фан-клуб в России и странах СНГ</div>
+	
+	
+  </div>
+  
+  </div>
+ 
+
+ </div>
+  </div>
+    </div>
+		   <div style="background: none repeat scroll 0% 0% rgb(0, 0, 0); width: 1000px; margin: 0px auto; padding: 5px;"> <img src="http://www.as-roma.ru/graph/18.png">
+<!--Rating@Mail.ru counter-->
+ <a target="_top" href="http://top.mail.ru/jump?from=405887" > <img src="http://d1.c3.b6.a0.top.mail.ru/counter?id=405887;t=139" border="0" height="40" width="88" alt="Рейтинг@Mail.ru"  /></a> 
+<!--// Rating@Mail.ru counter1-->
+ </div>
+		
+	<div style="display:none">
+		<form name="" id="reg_form" action="index.html" method="post" style='max-width:450px;' >	
+			<table width="100%" border="0" cellpadding="0" cellspacing="0" >
+				<tbody>
+					<tr>
+						<td valign="top" bgcolor="#d97024"><img src="http://www.as-roma.ru/images/block.gif" alt="" width="1" border="0" height="30"></td>
+						<td class="white_text" width="100%" align="center" bgcolor="#d97024">Регистрация нового пользователя</td>
+					</tr>
+				</tbody>
+			</table>
+			<table width="25%" border="0" cellpadding="5" cellspacing="5" align="center">
+				<tbody>
+					<tr>
+						<td class="text_all_reg" width="100%" align="center" id="reg_form_text">
+							<div id="err" align="left"></div>
+														<input type="hidden" id="captcha_sid" name="captcha_sid" value="02ff1a79712b40747413263d9c652075">
+							<table width="100%" border="0" cellpadding="5" cellspacing="5">
+								<tbody>
+									<tr>
+										<td class="text_all_reg" align="center"><b>Ваше имя: <br></b></td>
+										<td>
+											<input name="name_user" value="" id="reg" type="text"><br>
+											<span style="font-size: 10px; color: blue;">(будет видно другим пользователям при размещении комментария)
+											</span>
+										</td>
+									</tr>
+									<tr>
+										<td class="text_all_reg" width="100%" align="center"><b>E-mail:</b></td>
+										<td><input name="mail_user" value="" id="reg" type="text"></td>
+										<input name="go_reg" value="true" type="hidden">
+									</tr>
+									<tr>
+										<td class="text_all_reg" width="100%" align="center"><b>Цифры:</b></td>
+										<td><img src="http://www.as-roma.ru/bitrix/tools/captcha.php?captcha_sid=02ff1a79712b40747413263d9c652075" width="172px"><br/><br/>
+											<input name="captcha_word" value="" id="reg" type="text">
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<div align="center"><input onclick="ajax_reg();return false;" src="http://www.as-roma.ru/images/reg_butt.gif" name="sub" type="image"></div>
+							<p>Регистрация позволит Вам оставлять комментарии к статьям и новостям.</p><p>Пароль будет выслан Вам по указанный e-mail.</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</form>
+		
+				
+		<form name="" id="auth_form" action="index.html" method="post" style='max-width:450px;' >	
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tbody>
+					<tr>
+						<td valign="top" bgcolor="#d97024"><img src="http://www.as-roma.ru/images/block.gif" alt="" width="1" border="0" height="30"></td>
+						<td class="white_text" width="100%" align="center" bgcolor="#d97024">Авторизация пользователя</td>
+					</tr>
+				</tbody>
+			</table>
+			<table width="25%" border="0" cellpadding="5" cellspacing="5" align="center" >
+				<tbody>
+					<tr>
+						<td class="text_all_reg" width="100%" align="center">
+							<div id="err_auth" align="left"></div>							
+							<table width="100%" border="0" cellpadding="5" cellspacing="5">
+								<tbody>
+									<tr>
+										<td class="text_all_reg" align="center"><b>E-mail:<br></b></td>
+										<td>
+											<input name="login" value="" id="reg" type="text"><br>
+										</td>
+									</tr>
+									<tr>
+										<td class="text_all_reg" width="100%" align="center"><b>Пароль:</b></td>
+										<td><input name="password" value="" id="reg" type="password"></td>
+									</tr>									
+								</tbody>
+							</table>
+							<div align="center">
+							Еще не зарегистрированы? <a class="big_link" style="color:#6798BA;font-family:Arial;font-size:14px;font-style:italic;font-weight:bold;" id="inline" href="index.html#reg_form">Вам сюда</a>
+<br><br>
+							<input onclick="ajax_auth();return false;" src="http://www.as-roma.ru/images/vxod.gif" name="sub" type="image"></div>
+							
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</form>
+	
+		
+	</div>
+	
+	
+ </body>
+</html>
+
+
+
+
+
+
+
+
