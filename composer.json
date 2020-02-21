@@ -1,7 +1,7 @@
 {
-	"name": "asroma",
+	"name": "amr-dallin/asroma",
 	"require": {
 		"composer-plugin-api": "*",
-		"sunra/php-simple-html-dom-parser": "1.5.2"
+		"paquettg/php-html-parser": "^2.1"
 	}
 }

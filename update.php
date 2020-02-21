@@ -1,35 +1,31 @@
 <?php
 require_once "vendor/autoload.php";
 
-use Sunra\PhpSimple\HtmlDomParser;
+use PHPHtmlParser\Dom;
 
-try {
-    $html = HtmlDomParser::file_get_html("http://www.bbc.com/sport/football/italian-serie-a/table");
-} catch(Exception $e) {
-    print_r($e);
-}
+$dom = new Dom;
+$dom->loadFromUrl('https://www.bbc.com/sport/football/italian-serie-a/table');
 
 $data = [];
-foreach($html->find("#trc-20-italian-serie-a-CFBB212016S1R1", 0)->find("tr") as $row) {
-    $data["table"][] = [
-        "teamName" => $row->find("td.team-name", 0)->plaintext,
-        "played" => $row->find("td.played", 0)->plaintext,
-        "points" => $row->find("td.points", 0)->plaintext
+foreach($dom->find('table.gs-o-table')[0]->find('tbody tr') as $row) {
+    $data['table'][] = [
+        'teamName' => $row->find('td')[2]->find('a > abbr > span')[0]->text,
+        'played'   => $row->find('td')[3]->text,
+        'points'   => $row->find('td')[10]->text
     ];
 }
 
 if (!empty($data)) {
-    $data["info"] = [
-        "author" => "Marat Dallin",
-        "authorSite" => "https://dallin.pro",
-        "authorEmail" => "amr@dallin.pro",
-        "created" => date("c"),
-        "source" => "http://www.bbc.com/sport/football/italian-serie-a/table"
+    $data['info'] = [
+        'author' => 'Marat Dallin',
+        'authorSite' => 'https://dallin.uz',
+        'authorEmail' => 'mail@dallin.uz',
+        'created' => date('c'),
+        'source' => 'https://www.bbc.com/sport/football/italian-serie-a/table'
     ];
-    
+
     $json = json_encode($data);
     file_put_contents('data.json', $json);
 }
 
-$html->clear();
-unset($html);
+unset($dom);
