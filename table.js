@@ -1,7 +1,7 @@
 
 var XHR = ("onload" in new XMLHttpRequest()) ? XMLHttpRequest : XDomainRequest;
 var xhr = new XHR();
-xhr.open('GET', 'http://api.dallin.uz/asroma/data.json', false);
+xhr.open('GET', 'https://api.dallin.uz/asroma/data.json', false);
 xhr.send();
 
 if (xhr.status == 200) {
