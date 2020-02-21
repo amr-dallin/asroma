@@ -1,14 +1,14 @@
 
 var XHR = ("onload" in new XMLHttpRequest()) ? XMLHttpRequest : XDomainRequest;
 var xhr = new XHR();
-xhr.open('GET', 'http://api.dallin.pro/asroma/data.json', false);
+xhr.open('GET', 'http://api.dallin.uz/asroma/data.json', false);
 xhr.send();
 
 if (xhr.status == 200) {
     var answers = xhr.responseText;
     var json = JSON.parse(answers);
     var asromaTable = document.getElementById("asromaTable");
-    
+
     var tr = '<tr class="tabl_ch">'+
 		    '<td class="team_name"></td>'+
 		    '<td>Игр</td><td>Очков</td>';
@@ -20,7 +20,7 @@ if (xhr.status == 200) {
 			'<td>'+item["points"]+'</td>'
 		'</tr>';
     });
-    
+
     var divRate = '<div class="rate">'+
 	'<div class="ser_name">СЕРИЯ А</div>'+
 	'<table class="tabl_ser">'+
@@ -30,6 +30,3 @@ if (xhr.status == 200) {
 
     asromaTable.innerHTML = divRate;
 }
-
-
-
